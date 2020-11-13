@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="classicmodels" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.UserTable" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="user_table">
+        <id name="userId" type="int">
+            <column name="user_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="userName" optimistic-lock="true" type="string" unique="false">
+            <column name="user_name"/>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" optimistic-lock="true" type="string" unique="false">
+            <column name="created_by" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="created_date" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
